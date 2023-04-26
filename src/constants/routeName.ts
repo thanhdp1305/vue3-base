@@ -1,3 +1,3 @@
 export enum RouterNameEnum {
-  "SignIn" = "SignIn",
+  "example" = "example",
 }

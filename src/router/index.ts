@@ -1,12 +1,12 @@
 import { createRouter, createWebHistory, type RouteRecordRaw } from "vue-router";
 
-const ExampleView = () => import("../views/ExampleView.vue");
+const ExampleCode = () => import("../views/ExampleCode/ExampleCode.vue");
 
 const constantRoutes: RouteRecordRaw[] = [
   {
-    path: "/example",
+    path: "/",
     name: "example",
-    component: ExampleView,
+    component: ExampleCode,
   },
 ];
 
