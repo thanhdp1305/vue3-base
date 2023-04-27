@@ -1,25 +1,34 @@
-import { Component, Vue } from "vue-facing-decorator";
+import { defineComponent, onMounted } from "vue";
 
-@Component({
-  name: "vue-console-header",
-})
-export default class ConsoleHeader extends Vue {
-  toggleSideBar = true;
-  logoHeader = false;
-  sidebarMenuOpened = true;
-  mounted(): void {
-    //
-  }
+export default defineComponent({
+  name: "ConsoleHeader",
+  components: {},
+  setup() {
+    const toggleSideBar = true;
+    const logoHeader = false;
+    let sidebarMenuOpened = true;
 
-  toggleMenuSidebar(): void {
-    if (this.sidebarMenuOpened) {
-      document.body.classList.remove("sidebar-open");
-      document.body.classList.add("sidebar-collapse");
-      this.sidebarMenuOpened = false;
-    } else {
-      document.body.classList.remove("sidebar-collapse");
-      document.body.classList.add("sidebar-open");
-      this.sidebarMenuOpened = true;
-    }
-  }
-}
+    onMounted(() => {
+      //
+    });
+
+    const toggleMenuSidebar = (): void => {
+      if (sidebarMenuOpened) {
+        document.body.classList.remove("sidebar-open");
+        document.body.classList.add("sidebar-collapse");
+        sidebarMenuOpened = false;
+      } else {
+        document.body.classList.remove("sidebar-collapse");
+        document.body.classList.add("sidebar-open");
+        sidebarMenuOpened = true;
+      }
+    };
+
+    return {
+      toggleSideBar,
+      logoHeader,
+      sidebarMenuOpened,
+      toggleMenuSidebar,
+    };
+  },
+});

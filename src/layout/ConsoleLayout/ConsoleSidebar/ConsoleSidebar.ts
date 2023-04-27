@@ -1,10 +1,16 @@
-import { Component, Vue } from "vue-facing-decorator";
+import IconSvg from "@/components/IconSvg/IconSvg.vue";
+import { defineComponent, onMounted } from "vue";
 
-@Component({
-  name: "vue-console-siderbar",
-})
-export default class ConsoleSidebar extends Vue {
-  mounted(): void {
-    //
-  }
-}
+export default defineComponent({
+  name: "ConsoleSidebar",
+  components: {
+    IconSvg,
+  },
+  setup() {
+    onMounted(() => {
+      //
+    });
+
+    return {};
+  },
+});

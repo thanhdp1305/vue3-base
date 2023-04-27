@@ -1,29 +1,36 @@
-import { Component, Vue } from "vue-facing-decorator";
-import { ConsoleHeader } from "./ConsoleHeader";
-import { ConsoleSidebar } from "./ConsoleSidebar";
+import { defineComponent, onMounted } from "vue";
+import ConsoleHeader from "./ConsoleHeader/ConsoleHeader.vue";
+import ConsoleSidebar from "./ConsoleSidebar/ConsoleSidebar.vue";
 
-@Component({
-  name: "vue-console-layout",
+export default defineComponent({
+  name: "ConsoleLayout",
   components: {
     ConsoleHeader,
     ConsoleSidebar,
   },
-})
-export default class ConsoleLayout extends Vue {
-  $refs!: {
-    consoleHeader: ConsoleHeader;
-  };
-  isMinimizeAside = false;
-  mounted(): void {
-    this.renderClass();
-  }
+  ref: {
+    consoleHeader: ConsoleHeader,
+  },
+  setup() {
+    const isMinimizeAside = false;
 
-  renderClass(): void {
-    document.body.className = "";
-    document.body.className = "sidebar-mini control-sidebar-slide-open layout-fixed layout-navbar-fixed";
-  }
+    onMounted(() => {
+      renderClass();
+    });
 
-  toggleMenuSidebar(): void {
-    this.$refs.consoleHeader?.toggleMenuSidebar();
-  }
-}
+    const renderClass = () => {
+      document.body.className = "";
+      document.body.className = "sidebar-mini control-sidebar-slide-open layout-fixed layout-navbar-fixed";
+    };
+
+    const toggleMenuSidebar = () => {
+      consoleHeader!.toggleMenuSidebar();
+    };
+
+    return {
+      isMinimizeAside,
+      renderClass,
+      toggleMenuSidebar,
+    };
+  },
+});

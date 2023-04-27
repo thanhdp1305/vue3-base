@@ -1,14 +1,14 @@
 .form-control.is-invalid {
-  border-color: #F1416C;
+  border-color: #f1416c;
   background-image: unset;
 }
 
 .error-message {
-  color: #F1416C;
+  color: #f1416c;
 }
 
 .form-check.form-check-disabled-custom .form-check-input:checked:disabled {
-  background-color: #F3F6F9;
+  background-color: #f3f6f9;
   opacity: 1;
 }
 

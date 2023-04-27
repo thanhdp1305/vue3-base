@@ -10,8 +10,8 @@ import "./assets/css/adminlte.min.css";
 import "./assets/main.css";
 import "./assets/css/input.css";
 
-import { ConsoleLayout } from "./layout/ConsoleLayout";
-import { GuestLayout } from "./layout/GuestLayout";
+import ConsoleLayout from "./layout/ConsoleLayout/ConsoleLayout.vue";
+import GuestLayout from "./layout/GuestLayout/GuestLayout.vue";
 
 const app = createApp(App);
 

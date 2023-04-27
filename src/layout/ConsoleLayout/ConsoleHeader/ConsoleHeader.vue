@@ -23,7 +23,7 @@
     <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto">
       <li class="nav-item dropdown">
-        <a class="nav-link px-2"> </a>
+        <a class="nav-link px-2" />
       </li>
     </ul>
   </nav>
