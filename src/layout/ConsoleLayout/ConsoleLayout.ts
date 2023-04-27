@@ -15,7 +15,12 @@ export default class ConsoleLayout extends Vue {
   };
   isMinimizeAside = false;
   mounted(): void {
-    //
+    this.renderClass();
+  }
+
+  renderClass(): void {
+    document.body.className = "";
+    document.body.className = "sidebar-mini control-sidebar-slide-open layout-fixed layout-navbar-fixed";
   }
 
   toggleMenuSidebar(): void {
